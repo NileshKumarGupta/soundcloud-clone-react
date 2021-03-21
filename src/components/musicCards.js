@@ -9,19 +9,23 @@ import React from "react";
 
 import "./musicCards.css";
 
-const MusicCards = ({ music }) => {
+const MusicCards = ({ music, id }) => {
   return (
-    <div>
+    <React.Fragment key={id}>
       <Card>
         <CardActionArea>
-          <CardMedia image={music.img} alt={music.alt} className="cardImage" />
+          <CardMedia
+            image={music.image}
+            alt={music.alt}
+            className="cardImage"
+          />
           <CardContent style={{ textAlign: "right" }}>
-            <Typography variant="h6">{music.title}</Typography>
+            <Typography variant="h6">{music.name}</Typography>
             <Typography variant="subtitle1">{music.artist}</Typography>
           </CardContent>
         </CardActionArea>
       </Card>
-    </div>
+    </React.Fragment>
   );
 };
 

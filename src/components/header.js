@@ -8,7 +8,14 @@ import {
 import CloudIcon from "@material-ui/icons/Cloud";
 import React from "react";
 
+import { signInWithGoogle } from "../firebase";
+import UserProvider from "./userProvider";
 import "./header.css";
+
+/*
+Ideally on clicking, opens up a modal 
+and shows all options there
+*/
 
 const Header = () => {
   return (
@@ -19,7 +26,14 @@ const Header = () => {
         </IconButton>
         <Typography variant="h6">SOUNDCLOUD</Typography>
         <Button className="topBarButton signInButton">Sign In</Button>
-        <Button className="topBarButton signUpButton">Create Account</Button>
+        <UserProvider>
+          <Button
+            className="topBarButton signUpButton"
+            onClick={() => signInWithGoogle()}
+          >
+            Create Account
+          </Button>
+        </UserProvider>
       </Toolbar>
     </AppBar>
   );
