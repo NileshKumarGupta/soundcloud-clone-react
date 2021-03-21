@@ -1,0 +1,26 @@
+.bannerDiv {
+  background: url("../assets/banner_image.jpg");
+  width: 100%;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.textDiv {
+  text-align: center;
+  width: 60%;
+  margin: -20px auto 0px auto;
+  height: 50%;
+  text-shadow: 1px 0 0 black, 0 1px 0 black, -1px 0 0 black, 0 -1px 0 black;
+}
+
+.bannerSignUpButton {
+  background-color: var(--orange) !important;
+  color: white !important;
+  padding: 10px !important;
+  margin-top: 20px !important;
+  text-transform: none !important;
+}

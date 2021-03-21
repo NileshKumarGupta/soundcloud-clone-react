@@ -1,0 +1,37 @@
+.signDiv {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.signDiv > * {
+  margin: 10px 0;
+}
+
+.signInOption {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.signInOption > * {
+  margin: 0 10px;
+}
+
+.signButton {
+  font-size: 1.2rem !important;
+  text-transform: none !important;
+  padding: 10px !important;
+}
+
+.signUpButton {
+  background-color: var(--orange) !important;
+  color: white !important;
+}
+
+.signInButton {
+  border: 1px solid grey !important;
+}

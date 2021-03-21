@@ -1,0 +1,29 @@
+.topBar {
+  /* background-color: var(--orange) !important; */
+  background-color: black !important;
+  border-top: 3px solid var(--orange);
+}
+
+.soundCloudIcon {
+  color: white !important;
+}
+
+.topBarButton {
+  color: white !important;
+  text-transform: none !important;
+}
+
+.signInButton {
+  margin-left: auto !important;
+  border: 1px solid white !important;
+}
+
+.signUpButton {
+  margin-left: 10px !important;
+  background-color: var(--orange) !important;
+}
+
+/* .signUpButton {
+  margin-left: auto;
+  color: white !important;
+} */
