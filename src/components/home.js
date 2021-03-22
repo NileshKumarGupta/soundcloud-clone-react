@@ -8,7 +8,8 @@ import Sign from "./sign";
 // import { ReactAudio } from "reactjs-media";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import testMedia from "../assets/test_music.mp3";
+
+import "./home.css";
 
 /*
 Initial Page shown when not signed in
@@ -19,12 +20,19 @@ Components
   Search
   Trending
   SignUp/Signin Action Button
+  Media Player
 */
 
 const Home = () => {
-  const [selectedSong, setSelectedSong] = useState({ src: testMedia });
+  const [selectedSong, setSelectedSong] = useState(null);
 
-  console.log(selectedSong);
+  const onNext = () => {
+    console.log("Next Button Pressed");
+  };
+
+  const onPrevious = () => {
+    console.log("Previous Button Pressed");
+  };
 
   return (
     <div>
@@ -33,9 +41,19 @@ const Home = () => {
       <Search />
       <Trending setSelectedSong={setSelectedSong} />
       <Sign />
-      <div>
-        {/* <ReactAudio src={selectedSong.src} /> */}
-        <AudioPlayer src={selectedSong.src} />
+      <div className="footerMediaPlayer">
+        {selectedSong ? (
+          <div className="playerContainer">
+            <AudioPlayer
+              className="mediaPlayer"
+              src={selectedSong.musicUrl}
+              autoPlay={true}
+              onClickNext={onNext()}
+              onClickPrevious={onPrevious()}
+            />
+            <div>{selectedSong.music.name}</div>
+          </div>
+        ) : null}
       </div>
     </div>
   );
