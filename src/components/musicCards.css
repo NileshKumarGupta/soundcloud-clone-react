@@ -1,3 +1,30 @@
 .cardImage {
   height: 200px;
 }
+
+.musicCardIcon {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  font-size: 5rem !important;
+  color: white !important;
+  animation: fadeIn 0.3s;
+  opacity: 0.9;
+}
+
+.hide {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.musicCard:hover .hide {
+  display: block !important;
+}

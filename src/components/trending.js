@@ -6,7 +6,7 @@ import { db } from "../firebase";
 
 import "./trending.css";
 
-const Trending = () => {
+const Trending = ({ setSelectedSong }) => {
   const [trendingSongs, setTrendingSongs] = useState([]);
 
   useEffect(() => {
@@ -30,7 +30,11 @@ const Trending = () => {
       </Typography>
       <div className="trendingDiv">
         {trendingSongs.map((music) => (
-          <MusicCards music={music.data} id={music.docId} />
+          <MusicCards
+            music={music.data}
+            key={music.id}
+            setSelectedSong={setSelectedSong}
+          />
         ))}
       </div>
     </div>
