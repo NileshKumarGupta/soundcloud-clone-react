@@ -1,0 +1,27 @@
+.signModal {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContent {
+  width: 40%;
+  background-color: white;
+}
+
+.modalContent div {
+  width: 100% !important;
+}
+
+.authSpan {
+  display: block;
+}
+
+.authSpan::before,
+.authSpan::after {
+  display: block !important;
+  width: 43%;
+  border: 1px solid black;
+}

@@ -1,0 +1,38 @@
+.footerMediaPlayer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 8vh;
+}
+
+.mediaPlayer * {
+  color: var(--orange) !important;
+}
+
+.playerContainer {
+  width: 60%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  height: 8vh;
+}
+
+.musicDetails {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.musicDetails img {
+  padding-left: 10px;
+  height: 8vh;
+  max-width: 140px;
+}
+
+.musicText {
+  width: 100%;
+  padding-left: 40px;
+  margin: auto;
+  text-align: left;
+}

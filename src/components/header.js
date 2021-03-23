@@ -9,7 +9,10 @@ import CloudIcon from "@material-ui/icons/Cloud";
 import React from "react";
 
 import { signInWithGoogle } from "../firebase";
+
 import UserProvider from "./userProvider";
+import SignModal from "./signModal";
+
 import "./header.css";
 
 /*
@@ -33,6 +36,7 @@ const Header = () => {
           >
             Create Account
           </Button>
+          <SignModal />
         </UserProvider>
       </Toolbar>
     </AppBar>

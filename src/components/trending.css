@@ -1,6 +1,25 @@
+.trendingContainer {
+  margin: auto;
+  width: 90%;
+  text-align: center;
+}
+
 .trendingDiv {
   display: grid;
   grid-auto-columns: auto;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
+}
+
+.trendingText {
+  margin: 40px 0;
+}
+
+.exploreTrendingButton {
+  background-color: var(--orange) !important;
+  text-transform: none !important;
+  color: white !important;
+  font-size: 1.1em !important;
+  padding: 15px 35px !important;
+  margin-top: 40px !important;
 }

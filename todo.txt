@@ -1,0 +1,7 @@
+search
+sign in
+loader for trending
+modal for signin
+dropdown for search
+
+animation

@@ -1,4 +1,4 @@
-import { Typography } from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 
 import MusicCards from "./musicCards";
@@ -24,8 +24,8 @@ const Trending = ({ setSelectedSong }) => {
   }, []);
 
   return (
-    <div style={{ margin: "auto", width: "90%", textAlign: "center" }}>
-      <Typography variant="h4" style={{ margin: "40px 0" }}>
+    <div className="trendingContainer">
+      <Typography variant="h4" className="trendingText">
         Here's What's Trending Right Now!!
       </Typography>
       <div className="trendingDiv">
@@ -37,6 +37,9 @@ const Trending = ({ setSelectedSong }) => {
           />
         ))}
       </div>
+      <Button className="exploreTrendingButton">
+        Explore Trending Playlist
+      </Button>
     </div>
   );
 };
