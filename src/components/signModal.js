@@ -3,28 +3,36 @@ import React, { useState } from "react";
 
 import "./signModal.css";
 
-const SignModal = () => {
-  const [modalOpen, setModalOpen] = useState(true);
-
+const SignModal = ({ openModal, setOpenModal }) => {
   return (
     <Modal
-      open={modalOpen}
-      onClose={() => setModalOpen(false)}
+      open={openModal}
+      onClose={() => setOpenModal(false)}
       aria-labelledby="simple-modal-title"
       aria-describedby="simple-modal-description"
       className="signModal"
     >
       <div className="modalContent">
-        <Button>Continue with Facebook</Button>
-        <Button>Continue with Google</Button>
+        <Button className="facebookButton">Continue with Facebook</Button>
+        <Button className="googleButton">Continue with Google</Button>
         <div className="authMethodSeperator">
-          <div></div>
+          <hr />
           <span className="authSpan">or</span>
-          <div></div>
+          <hr />
         </div>
-        <Input className="emailInput" />
-        <Input className="passwordInput" />
-        <Button>Continue</Button>
+        <Input
+          className="emailInput"
+          fullWidth
+          placeholder="Email"
+          type="email"
+        />
+        <Input
+          className="passwordInput"
+          fullWidth
+          placeholder="Password"
+          type="password"
+        />
+        <Button className="continueButton">Continue</Button>
       </div>
     </Modal>
   );

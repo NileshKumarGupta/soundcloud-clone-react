@@ -6,7 +6,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 import CloudIcon from "@material-ui/icons/Cloud";
-import React from "react";
+import React, { useState } from "react";
 
 import { signInWithGoogle } from "../firebase";
 
@@ -21,6 +21,8 @@ and shows all options there
 */
 
 const Header = () => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <AppBar position="static" className="topBar">
       <Toolbar>
@@ -28,7 +30,12 @@ const Header = () => {
           <CloudIcon />
         </IconButton>
         <Typography variant="h6">SOUNDCLOUD</Typography>
-        <Button className="topBarButton signInButton">Sign In</Button>
+        <Button
+          className="topBarButton signInButton"
+          onClick={() => setOpenModal(true)}
+        >
+          Sign In
+        </Button>
         <UserProvider>
           <Button
             className="topBarButton signUpButton"
@@ -36,7 +43,7 @@ const Header = () => {
           >
             Create Account
           </Button>
-          <SignModal />
+          <SignModal openModal={openModal} setOpenModal={setOpenModal} />
         </UserProvider>
       </Toolbar>
     </AppBar>

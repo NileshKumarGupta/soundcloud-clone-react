@@ -7,21 +7,55 @@
 }
 
 .modalContent {
-  width: 40%;
+  width: 30%;
   background-color: white;
+  padding: 40px 20px;
+  border-radius: 10px;
 }
 
-.modalContent div {
-  width: 100% !important;
+.authMethodSeperator {
+  display: grid;
+  grid-template-columns: 4fr 1fr 4fr;
+  align-items: center;
+}
+
+.authMethodSeperator hr {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: black;
 }
 
 .authSpan {
   display: block;
+  text-align: center;
+  font-size: 1.2em;
 }
 
-.authSpan::before,
-.authSpan::after {
+.facebookButton,
+.googleButton,
+.continueButton {
   display: block !important;
-  width: 43%;
-  border: 1px solid black;
+  width: 100% !important;
+  padding: 5px 0 !important;
+  color: white !important;
+  font-size: 1.2em !important;
+  margin: 20px 0px !important;
+}
+
+.facebookButton {
+  background-color: #3578e5 !important;
+}
+
+.googleButton {
+  background-color: #de5246 !important;
+}
+
+.emailInput,
+.passwordInput {
+  margin: 10px 0;
+}
+
+.continueButton {
+  background-color: var(--orange) !important;
 }
