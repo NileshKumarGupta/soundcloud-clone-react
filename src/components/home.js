@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import "react-h5-audio-player/lib/styles.css";
 
 import Header from "./header";
 import Banner from "./banner";
@@ -6,9 +7,9 @@ import Search from "./search";
 import Trending from "./trending";
 import Sign from "./sign";
 import MusicPlayer from "./musicPlayer";
+import { UserContext } from "./userProvider";
 // import { ReactAudio } from "reactjs-media";
 // import AudioPlayer from "react-h5-audio-player";
-import "react-h5-audio-player/lib/styles.css";
 
 import "./home.css";
 
@@ -26,6 +27,7 @@ Components
 
 const Home = () => {
   const [selectedSong, setSelectedSong] = useState(null);
+  const user = useContext(UserContext);
 
   return (
     <div>
@@ -34,6 +36,7 @@ const Home = () => {
       <Search />
       <Trending setSelectedSong={setSelectedSong} />
       <Sign />
+      <pre>{JSON.stringify(user)}</pre>
       <MusicPlayer selectedSong={selectedSong} />
     </div>
   );

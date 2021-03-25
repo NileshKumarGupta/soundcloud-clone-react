@@ -3,5 +3,11 @@ import ReactDOM from "react-dom";
 import App from "./components/app";
 
 import "./index.css";
+import UserProvider from "./components/userProvider";
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(
+  <UserProvider>
+    <App />
+  </UserProvider>,
+  document.querySelector("#root")
+);

@@ -1,9 +1,19 @@
 import { Button, Input, Modal } from "@material-ui/core";
 import React, { useState } from "react";
 
+import {
+  signInWithEmail,
+  signInWithGoogle,
+  signUpWithEmail,
+  signInWithFacebook,
+} from "../firebase";
+
 import "./signModal.css";
 
-const SignModal = ({ openModal, setOpenModal }) => {
+const SignModal = ({ openModal, setOpenModal, signUp = false }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <Modal
       open={openModal}
@@ -13,8 +23,12 @@ const SignModal = ({ openModal, setOpenModal }) => {
       className="signModal"
     >
       <div className="modalContent">
-        <Button className="facebookButton">Continue with Facebook</Button>
-        <Button className="googleButton">Continue with Google</Button>
+        <Button className="facebookButton" onClick={() => signInWithFacebook()}>
+          Continue with Facebook
+        </Button>
+        <Button className="googleButton" onClick={() => signInWithGoogle()}>
+          Continue with Google
+        </Button>
         <div className="authMethodSeperator">
           <hr />
           <span className="authSpan">or</span>
@@ -25,14 +39,27 @@ const SignModal = ({ openModal, setOpenModal }) => {
           fullWidth
           placeholder="Email"
           type="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
         />
         <Input
           className="passwordInput"
           fullWidth
           placeholder="Password"
           type="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
         />
-        <Button className="continueButton">Continue</Button>
+        <Button
+          className="continueButton"
+          onClick={
+            signUp
+              ? () => signUpWithEmail(email, password)
+              : () => signInWithEmail(email, password)
+          }
+        >
+          Continue
+        </Button>
       </div>
     </Modal>
   );
