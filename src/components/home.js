@@ -36,7 +36,6 @@ const Home = () => {
       <Search />
       <Trending setSelectedSong={setSelectedSong} />
       <Sign />
-      <pre>{JSON.stringify(user)}</pre>
       <MusicPlayer selectedSong={selectedSong} />
     </div>
   );
